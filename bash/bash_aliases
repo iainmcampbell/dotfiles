@@ -1,0 +1,220 @@
+# links:
+# https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# https://github.com/notwaldorf/.not-quite-dotfiles/blob/master/aliases
+
+
+
+
+ #####  #### ######
+##       ##    ##
+##  ###  ##    ##
+##   ##  ##    ##
+ #####  ####   ##
+
+# Git super short forms
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gcm='git commit -m'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+
+# squash: add (all) changes to previous commit
+alias gam='git commit --amend -C HEAD'
+alias gama='git commit -a --amend -C HEAD'
+function grbi() { git rebase -i HEAD~${1}; }
+
+alias gpl='git pull'
+alias gps='git push'
+
+# pretty logs
+alias gll="git log --graph --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'"
+alias glll="git log --graph --stat --date=short --pretty=format:'%Cgreen%h %Cblue%cd (%cr) %Cred%an%C(yellow)%d%Creset: %s'"
+
+alias gco='git checkout'
+
+alias gbr='git checkout -b'
+
+alias gl='git log'
+
+# pretty logging
+alias glg='git log --graph --oneline --decorate --all'
+
+# log with date
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+
+# Git log find by commit message
+function glf() { git log --all --grep="$1"; }
+
+# Opens the github page for the current git repository in your browser
+# https://jasonneylon.wordpress.com/2011/04/22/opening-github-in-your-browser-from-the-terminal/
+function gh() {
+  gitremote="$1"
+  if [ "$1" == "" ]; then
+    gitremote="origin"
+  fi
+
+  giturl=$(git config --get remote.$gitremote.url)
+
+  if [ "$giturl" == "" ]
+    then
+      echo "Not a git repository or no remote.origin.url set"
+      exit 1;
+  fi
+
+  # what branch are we on?
+  branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+  branch="(unnamed branch)"     # detached HEAD
+  branch=${branch##refs/heads/}
+
+  if [[ $giturl == *"github"* ]]; then
+		giturl=${giturl/git\@github\.com\:/https://github.com/}
+		giturl=${giturl/\.git/}
+		giturl=$giturl/tree/$branch
+
+  elif [[ $giturl == *"bitbucket"* ]]; then
+  	giturl=${giturl/git\@bitbucket\.org\:/https://bitbucket.org/}
+  	giturl=${giturl/\.git/}
+  	giturl=$giturl/branch/$branch
+
+  fi
+
+  open $giturl
+}
+
+
+
+# Curl
+
+# alias curl-postjson='curl -X POST -H "Content-Type: application/json" -d {$2} \'\'{$1}'
+
+
+###### ##    ## ###### ##   ##  ######  ###  ##
+##   ## ##  ##    ##   ##   ## ##    ## #### ##
+######   ####     ##   ####### ##    ## ## ####
+##        ##      ##   ##   ## ##    ## ##  ###
+##        ##      ##   ##   ##  ######  ##   ##
+
+function venv() {
+  if [[ -n $(which virtualenv)  ]]; then
+
+    export WORKON_HOME=$HOME/.virtualenvs
+    source $(which virtualenvwrapper.sh)
+
+    # virtualenv aliases
+    # http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
+
+    alias v='workon'
+    alias v.deactivate='deactivate'
+    alias v.mk='mkvirtualenv --no-site-packages'
+    alias v.mk_withsitepackages='mkvirtualenv'
+    alias v.rm='rmvirtualenv'
+    alias v.switch='workon'
+    alias v.add2virtualenv='add2virtualenv'
+    alias v.cdsitepackages='cdsitepackages'
+    alias v.cd='cdvirtualenv'
+    alias v.lssitepackages='lssitepackages'
+
+  fi
+}
+
+alias py='python'
+alias mg='python manage.py' # django
+
+
+
+
+# FFMPEG
+
+# file -> 64kbps mono mp3
+function ff_mp3_64() {
+  ffmpeg -i "$1" -vn -ac 1 -ab 64k -acodec libmp3lame -y "$2"
+}
+
+# file -> 128kbps mono mp3
+function ff_mp3_128() {
+  ffmpeg -i "$1" -vn -ac 1 -ab 128k -acodec libmp3lame -y "$2"
+}
+
+
+
+###  ### ####  ####   #####
+########  ##  ##     ##
+## ## ##  ##   ####  ##
+##    ##  ##      ## ##
+##    ## #### #####   #####
+
+
+alias mamp_log='tail -f /Applications/MAMP/logs/php_error.log'
+
+alias p='phonegap'
+
+# sudo the previous command, with feeling
+alias fuck='sudo $(history -p \!\!)'
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# search for ssh alias
+alias sshwhich='less ~/.ssh/config | grep -A 2 $1'
+
+# copy public ssh key
+alias id_rsa="pbcopy < ~/.ssh/id_rsa.pub"
+
+# Quicklook (process will die when you close the QL window)
+alias ql='qlmanage -p "$@" >& /dev/null'
+
+# Spotlight in current directory
+alias spotlight='mdfind -onlyin . "$@"'
+
+# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+# (useful when executing time-consuming commands)
+alias badge="tput bel"
+
+# Empty trashes on all volumes and clear Apple’s System logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# open in chrome: chrome 'http://localhost:4000'
+alias chrome="/usr/bin/open -a '/Applications/Google Chrome.app'"
+
+# List all files colorized in long format
+alias l="ls -lFG"
+# List all files colorized in long format, including dot files
+alias la="ls -laFG"
+
+# alias .="open ."
+alias ..="cd .."
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Reload shell (as login shell)
+alias reload='exec $SHELL -l'
+
+# Figlet text (ASCII art) and copy to clipboard
+ansii() {
+  figlet -f ansii $1 | pbcopy
+}
+
+# Hide grep command in ps results
+alias psgrep='ps aux | grep -v grep | grep "$@"'
+
+# IP Addresses
+
+alias flush_dns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;"
+
+alias publicip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+
+
+
+
+
+
+
