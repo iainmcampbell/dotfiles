@@ -66,7 +66,7 @@ alias clobber="bin/rails tmp:cache:clear && bin/rails assets:clobber"
 alias npm_registry_shopify="npm config set @shopify:registry https://packages.shopify.io/shopify/node/npm/"
 alias npm_registry_public="npm config set @shopify:registry https://registry.yarnpkg.com"
 
-alias cli-dev="/Users/imc/src/github.com/Shopify/shopify-app-cli/bin/shopify"
+alias dev_shopify="/Users/imc/src/github.com/Shopify/shopify-app-cli/bin/shopify"
 
 alias clean="yarn run sewing-kit clean --vendor-dll"
 
@@ -104,6 +104,11 @@ ENDSSH
 
 alias test="yarn test --watch"
 
+
+# Mac OS X
+# ********************************************************
+
+alias ql='qlmanage -p'
 
 # Git
 # ********************************************************
