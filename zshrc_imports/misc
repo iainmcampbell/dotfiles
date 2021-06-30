@@ -1,0 +1,14 @@
+# iTerm
+
+# disable shared history
+# (https://superuser.com/questions/1245273/iterm2-version-3-individual-history-per-tab)
+unsetopt inc_append_history
+unsetopt share_history
+
+
+# Mac OS X quicklook
+alias ql='qlmanage -p'
+
+# basic webserver
+alias serve='python -m SimpleHTTPServer 8900'
+

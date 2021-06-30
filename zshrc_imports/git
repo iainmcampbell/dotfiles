@@ -1,0 +1,65 @@
+# Git
+# ********************************************************
+
+alias g='git'
+
+alias gs='git status'
+alias ga='git add'
+alias gcm='git commit -m'
+
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gco='git checkout $(git branch | grep -v "\*" | fzf)'
+
+alias gcp='git cherry-pick'
+
+alias gam='git commit --amend -C HEAD'
+
+# undo last commit & stage changes
+alias gundo='git reset HEAD^'
+
+alias branch-diff='git diff $(git merge-base HEAD origin/master)'
+
+# check out a detached branch from origin,
+# to not clutter up your local branch list when testing PRs
+tophat() {
+  git fetch origin $1
+  git checkout origin/$1
+}
+
+# the hardest of resets
+gitreset() {
+  HEAD=$(git rev-parse --abbrev-ref HEAD)
+  git fetch origin $HEAD
+  git reset --hard origin/$HEAD
+}
+
+# remove all branches that don't match whitelist argument
+# git_cleanup_branches "but-not-these-*"
+alias branch='git rev-parse --abbrev-ref HEAD'
+
+git_cleanup_branches_except() {
+
+  if [ -n "$1" ]; then
+    branches=$(git branch | grep -v -e "master" -e $1)
+  else
+    branches=$(git branch | grep -v "master")
+  fi
+
+  echo "Branches to delete:\n"
+  echo $branches
+  echo "\n"
+
+  read -q "REPLY?Delete these branches [y/n]? "
+
+  echo "\n"
+
+  if [ $REPLY = 'y' ]; then
+    # echo $branches | xargs echo
+    echo $branches | xargs git branch -D
+    echo 'Done.'
+  else
+    echo 'Ok, not deleting anything.'
+  fi
+
+}
