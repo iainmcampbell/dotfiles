@@ -1,4 +1,4 @@
-source ~/.zshrc_imports/zsh
+source ~/.zshrc_imports/oh-my-zsh
 
 source ~/.zshrc_imports/git
 source ~/.zshrc_imports/misc
