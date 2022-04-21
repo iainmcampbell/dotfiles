@@ -7,8 +7,6 @@
 
 if [ -e /Users/imc/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/imc/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-nvm use default
-
 alias partners="DISABLE_SHOPIFY_INTERNAL_API_INTERCEPTOR=1 dev rails"
 alias clobber="bin/rails tmp:cache:clear && bin/rails assets:clobber"
 
@@ -27,29 +25,4 @@ alias sc="spin code"
 alias so="spin open"
 alias sl="spin list"
 
-spin_install_subs() {
-ssh $1.iain-campbell.us.spin.dev <<ENDSSH
-cat <<EOT | bin/rails c
-
-shop = Shop.find_by(name: 'Shop 1')
-
-# Install Subscription App
-api_client = ApiClient.find_by(id: 2525000000)
-Apps::Installations::EnsureInstalled.perform(
-    app_id: api_client.id,
-    shop_id: shop.id,
-    access_scope: Access::Scope.for_client(api_client, shop).map(&:to_s)
-)
-
-# Enable beta flags
-shop.beta.enable 'argo_extensions_shops'
-shop.beta.enable 'argo_extensions_dev_portal'
-
-EOT
-
-# Seed selling plan group for Subscription
-bin/rails dev:subscriptions:create_selling_plan_group
-
-ENDSSH
-}
-
+alias sud="spin up shopify-dev:minimal --wait --name"
