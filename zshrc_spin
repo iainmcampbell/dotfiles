@@ -1,4 +1,4 @@
-source ~/.zshrc_imports/git
+source ~/dotfiles/zshrc_imports/git
 
 # Interactive prompt
 
