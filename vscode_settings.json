@@ -1,7 +1,6 @@
 {
   "editor.tabSize": 2,
   "editor.scrollBeyondLastLine": false,
-  "eslint.packageManager": "yarn",
   "workbench.colorTheme": "Oceanic Next",
   "workbench.colorCustomizations": {
     "[Oceanic Next]": {
@@ -15,7 +14,7 @@
       "tab.activeBorder": "#62b3b2"
     }
   },
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "near",
   "workbench.editor.closeEmptyGroups": false,
   "files.exclude": {
     "**/node_modules": true
@@ -54,14 +53,13 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "debug.node.autoAttach": "on",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "prettier.bracketSpacing": false,
-  "prettier.jsxBracketSameLine": false,
+  "prettier.bracketSameLine": false,
   "prettier.arrowParens": "always",
   "workbench.startupEditor": "none",
   "[html]": {
@@ -73,7 +71,6 @@
   "editor.formatOnSave": true,
   "workbench.panel.defaultLocation": "right",
   "editor.minimap.showSlider": "always",
-  "liveshare.showInStatusBar": "never",
   "gitblame.statusBarMessageClickAction": "Open tool URL",
   "debug.showInStatusBar": "never",
   "workbench.editor.tabSizing": "shrink",
@@ -81,13 +78,8 @@
   "terminal.integrated.allowChords": false,
   "editor.codeLens": false,
   "editor.hover.delay": 750,
-  "github.copilot.enable": {
-    "*": false
-  },
   "window.autoDetectHighContrast": false,
   "editor.bracketPairColorization.enabled": false,
-  "remote.SSH.defaultExtensions": ["eamodio.gitlens"],
-  "github.copilot.inlineSuggest.enable": false,
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "liquid": "liquid"
