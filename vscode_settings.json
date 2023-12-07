@@ -83,5 +83,15 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "liquid": "liquid"
-  }
+  },
+  "remote.SSH.defaultExtensions": [
+    "stalyo.select-quotes"
+  ],
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
+  },
+  "github.copilot.enable": {
+    "*": false
+  },
+  "editor.inlineSuggest.enabled": false
 }
