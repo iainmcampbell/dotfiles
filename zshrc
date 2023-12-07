@@ -19,3 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 if [ -d "/Applications/Sublime Text.app" ]; then
   export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 fi
+
+if [ -d "/opt/homebrew/bin" ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
