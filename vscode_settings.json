@@ -22,13 +22,13 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
   "eslint.run": "onSave",
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   "files.trimTrailingWhitespace": true,
   "editor.fontWeight": "500",
   "editor.fontFamily": "Menlo, monospace",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.lineHeight": 15,
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.links": false,
   "window.restoreWindows": "all",
@@ -38,6 +38,10 @@
   "editor.renderWhitespace": "none",
   "workbench.statusBar.visible": true,
   "window.titleBarStyle": "native",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -53,8 +57,17 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
@@ -62,13 +75,6 @@
   "prettier.bracketSameLine": false,
   "prettier.arrowParens": "always",
   "workbench.startupEditor": "none",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.formatOnSave": true,
   "workbench.panel.defaultLocation": "right",
   "editor.minimap.showSlider": "always",
   "gitblame.statusBarMessageClickAction": "Open tool URL",
@@ -88,10 +94,18 @@
     "stalyo.select-quotes"
   ],
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp"
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [
+      120
+    ],
+    "editor.semanticHighlighting.enabled": true
   },
-  "github.copilot.enable": {
-    "*": false
-  },
-  "editor.inlineSuggest.enabled": false
+  "editor.inlineSuggest.enabled": true,
+  "vscode-pets.petType": "totoro",
+  "security.workspace.trust.untrustedFiles": "open",
+  "remote.SSH.connectTimeout": 150
 }
