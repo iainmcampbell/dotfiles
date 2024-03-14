@@ -1,14 +1,21 @@
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+spinopendev() {
+  open "https://shopify-dev.$1.iain-campbell.us.spin.dev/"
+}
+
+spinall() {
+  spinopendev $1
+  spin code $1 shopify--shopify-dev
+  spin shell $1
+}
+
 alias s='spin'
 alias ss="spin shell"
 alias sc="spin code"
 alias so="spin open"
 alias sl="spin list"
 alias sud='spin up shopify-dev:minimal --wait --name'
-
-spinall() {
-  spin open $1
-  spin code $1 shopify--shopify-dev
-  spin shell $1
-}
+alias sall='spinall'
 
 alias test="yarn test --watch"
