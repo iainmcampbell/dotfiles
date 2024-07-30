@@ -1,7 +1,9 @@
 {
   "editor.tabSize": 2,
   "editor.scrollBeyondLastLine": false,
-  "workbench.colorTheme": "Oceanic Next",
+  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.preferredDarkColorTheme": "Oceanic Next",
   "workbench.colorCustomizations": {
     "[Oceanic Next]": {
       "statusBar.background": "#2e3238",
