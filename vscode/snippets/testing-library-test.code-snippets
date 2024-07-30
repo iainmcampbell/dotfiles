@@ -6,25 +6,27 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
 	// Placeholders with the same ids are connected.
 	// Example:
-	"React component template": {
+	"Testing library test": {
 		"scope": "typescriptreact",
-		"prefix": "react",
+		"prefix": "describe",
 		"body": [
 			"import React from 'react';",
+			"import {render, screen, userEvent} from 'app/ui/utilities/testing';",
 			"",
-			"interface ${1:Component}Props {",
-			"  ${2:propName}: ${3:propType};",
-			"}",
+			"import {${1:Component}} from './${1:Component}';",
+			"describe('${1:Component}', () => {",
+			"  it('${2:tests}', () => {",
+			"    const user = userEvent.setup();",
 			"",
-			"function ${1:Component}({${2:propName}}: ${1:Component}Props) {",
-			"  return (",
-			"    ${4:<></>}",
-			"  );",
-			"};",
+			"    render(",
+			"      <${1:Component} />",
+			"    );",
 			"",
-			"export {${1:Component}};",
+			"    expect(${3})",
+			"  });",
+			"});",
 		],
-		"description": "React component template",
+		"description": "Testing library test",
 		"isFileTemplate": true
 	}
 }
