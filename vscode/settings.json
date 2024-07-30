@@ -95,22 +95,29 @@
   "emmet.includeLanguages": {
     "liquid": "liquid"
   },
-  "remote.SSH.defaultExtensions": [
-    "stalyo.select-quotes"
-  ],
+  "remote.SSH.defaultExtensions": ["stalyo.select-quotes"],
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnType": true,
     "editor.insertSpaces": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.rulers": [
-      120
-    ],
+    "editor.rulers": [120],
     "editor.semanticHighlighting.enabled": true
   },
   "editor.inlineSuggest.enabled": true,
   "vscode-pets.petType": "totoro",
   "security.workspace.trust.untrustedFiles": "open",
-  "remote.SSH.connectTimeout": 150
+  "remote.SSH.connectTimeout": 150,
+  "github.copilot.editor.enableAutoCompletions": false,
+  "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.tabs.location": "left",
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }
