@@ -23,5 +23,15 @@
     "key": "ctrl+j",
     "command": "-editor.action.joinLines",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+g",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
   }
 ]
