@@ -1,6 +1,4 @@
 {
-  "editor.tabSize": 2,
-  "editor.scrollBeyondLastLine": false,
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.preferredLightColorTheme": "GitHub Light Default",
   "workbench.preferredDarkColorTheme": "Oceanic Next",
@@ -16,86 +14,46 @@
       "tab.activeBorder": "#62b3b2"
     }
   },
-  "editor.matchBrackets": "near",
   "workbench.editor.closeEmptyGroups": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.statusBar.visible": true,
+  "workbench.startupEditor": "none",
+  "workbench.panel.defaultLocation": "right",
+
   "files.exclude": {
     "**/node_modules": true
   },
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.highlightModifiedTabs": true,
-  "eslint.run": "onSave",
-  "editor.wordBasedSuggestions": "off",
   "files.trimTrailingWhitespace": true,
+
+  "editor.matchBrackets": "near",
+  "editor.tabSize": 2,
+  "editor.scrollBeyondLastLine": false,
+  "editor.wordBasedSuggestions": "off",
   "editor.fontWeight": "500",
   "editor.fontFamily": "Menlo, monospace",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.lineHeight": 15,
   "editor.lightbulb.enabled": "off",
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.links": false,
-  "window.restoreWindows": "all",
-  "window.newWindowDimensions": "inherit",
   "explorer.confirmDragAndDrop": false,
-  "javascript.suggest.autoImports": false,
   "editor.renderWhitespace": "none",
-  "workbench.statusBar.visible": true,
-  "window.titleBarStyle": "native",
   "editor.formatOnSave": true,
-  "[mdx]": {
-    "editor.formatOnSave": false
-  },
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
-  "prettier.bracketSpacing": false,
-  "prettier.bracketSameLine": false,
-  "prettier.arrowParens": "always",
-  "workbench.startupEditor": "none",
-  "workbench.panel.defaultLocation": "right",
   "editor.minimap.showSlider": "always",
-  "gitblame.statusBarMessageClickAction": "Open tool URL",
-  "debug.showInStatusBar": "never",
-  "workbench.editor.tabSizing": "shrink",
   "editor.minimap.enabled": false,
-  "terminal.integrated.allowChords": false,
   "editor.codeLens": false,
   "editor.hover.delay": 750,
-  "window.autoDetectHighContrast": false,
   "editor.bracketPairColorization.enabled": false,
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {
-    "liquid": "liquid"
-  },
-  "remote.SSH.defaultExtensions": ["stalyo.select-quotes"],
+  "editor.inlineSuggest.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "[mdx]": {"editor.formatOnSave": false},
+  "[markdown]": {"editor.formatOnSave": false},
+
+  "[json]": {"editor.defaultFormatter": "vscode.json-language-features"},
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnType": true,
@@ -105,13 +63,33 @@
     "editor.rulers": [120],
     "editor.semanticHighlighting.enabled": true
   },
-  "editor.inlineSuggest.enabled": true,
-  "vscode-pets.petType": "totoro",
-  "security.workspace.trust.untrustedFiles": "open",
-  "remote.SSH.connectTimeout": 150,
-  "github.copilot.editor.enableAutoCompletions": false,
+
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": false,
+  "prettier.bracketSameLine": false,
+  "prettier.arrowParens": "always",
+
+  "terminal.integrated.allowChords": false,
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.tabs.location": "left",
+
+  "window.restoreWindows": "all",
+  "window.newWindowDimensions": "inherit",
+  "window.titleBarStyle": "native",
+  "window.autoDetectHighContrast": false,
+
+  "gitblame.statusBarMessageClickAction": "Open tool URL",
+  "eslint.run": "onSave",
+  "debug.showInStatusBar": "never",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {"liquid": "liquid"},
+  "vscode-pets.petType": "totoro",
+  "security.workspace.trust.untrustedFiles": "open",
+  "remote.SSH.defaultExtensions": ["stalyo.select-quotes"],
+  "remote.SSH.connectTimeout": 150,
+
+  "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.editor.enableCodeActions": false,
   "github.copilot.renameSuggestions.triggerAutomatically": false,
   "github.copilot.enable": {
