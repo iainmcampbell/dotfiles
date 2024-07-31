@@ -53,6 +53,17 @@
   "[mdx]": {"editor.formatOnSave": false},
   "[markdown]": {"editor.formatOnSave": false},
 
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+
   "[json]": {"editor.defaultFormatter": "vscode.json-language-features"},
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
