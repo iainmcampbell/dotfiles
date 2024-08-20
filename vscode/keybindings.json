@@ -25,6 +25,21 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
+    "key": "alt+cmd+.",
+    "command": "-editor.action.autoFix",
+    "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+  },
+  {
+    "key": "alt+cmd+.",
+    "command": "closeTag.closeHTMLTag",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+.",
+    "command": "-closeTag.closeHTMLTag",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+cmd+g",
     "command": "editor.action.selectHighlights",
     "when": "editorFocus"

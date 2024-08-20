@@ -50,8 +50,8 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
 
-  "[mdx]": {"editor.formatOnSave": false},
-  "[markdown]": {"editor.formatOnSave": false},
+  "[mdx]": { "editor.formatOnSave": false },
+  "[markdown]": { "editor.formatOnSave": false },
 
   "[typescript]": {
     "editor.codeActionsOnSave": {
@@ -64,7 +64,7 @@
     }
   },
 
-  "[json]": {"editor.defaultFormatter": "vscode.json-language-features"},
+  "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnType": true,
@@ -94,7 +94,7 @@
   "eslint.run": "onSave",
   "debug.showInStatusBar": "never",
   "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {"liquid": "liquid"},
+  "emmet.includeLanguages": { "liquid": "liquid" },
   "vscode-pets.petType": "totoro",
   "security.workspace.trust.untrustedFiles": "open",
   "remote.SSH.defaultExtensions": ["stalyo.select-quotes"],
