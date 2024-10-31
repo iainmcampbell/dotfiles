@@ -1,3 +1,9 @@
+
+# bind up and down arrows to prompt search
+# https://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-text-already-entered-at-the-prompt-in-zsh
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # iTerm
 
 # disable shared history
@@ -11,4 +17,3 @@ alias ql='qlmanage -p'
 
 # basic webserver
 alias serve='python -m SimpleHTTPServer 8900'
-
