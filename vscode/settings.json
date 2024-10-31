@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "Oceanic Next",
   "workbench.preferredLightColorTheme": "GitHub Light Default",
   "workbench.preferredDarkColorTheme": "Oceanic Next",
   "workbench.colorCustomizations": {
@@ -64,6 +64,9 @@
     }
   },
 
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify"
+  },
   "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
@@ -82,7 +85,6 @@
   "prettier.arrowParens": "always",
 
   "terminal.integrated.allowChords": false,
-  "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.tabs.location": "left",
 
   "window.restoreWindows": "all",
@@ -100,13 +102,16 @@
   "remote.SSH.defaultExtensions": ["stalyo.select-quotes"],
   "remote.SSH.connectTimeout": 150,
 
-  "github.copilot.editor.enableAutoCompletions": false,
-  "github.copilot.editor.enableCodeActions": false,
-  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true,
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "stylelint.useLocal": true,
+  "terminal.integrated.tabs.enabled": false,
+
+  "git.openRepositoryInParentFolders": "always"
 }
