@@ -20,6 +20,9 @@ alias gundo='git reset HEAD^'
 
 alias branch-diff='git diff $(git merge-base HEAD origin/master)'
 
+# list all branches by date last modified
+alias branch-list="git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
+
 # check out a detached branch from origin,
 # to not clutter up your local branch list when testing PRs
 tophat() {
