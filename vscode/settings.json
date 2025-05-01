@@ -93,7 +93,6 @@
   "window.autoDetectHighContrast": false,
 
   "gitblame.statusBarMessageClickAction": "Open tool URL",
-  "eslint.run": "onSave",
   "debug.showInStatusBar": "never",
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {"liquid": "liquid"},
@@ -104,15 +103,10 @@
 
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.renameSuggestions.triggerAutomatically": true,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
   "stylelint.useLocal": true,
   "terminal.integrated.tabs.enabled": false,
 
   "git.openRepositoryInParentFolders": "always",
-  "json.format.keepLines": true
+  "json.format.keepLines": true,
+  "debug.javascript.autoAttachFilter": "always"
 }
