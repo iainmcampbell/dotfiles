@@ -6,6 +6,10 @@ source ~/.zshrc_imports/shopify
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
+if [[ -f /opt/homebrew/bin/rbenv ]]; then
+  eval "$(/opt/homebrew/bin/rbenv init - --no-rehash zsh)"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
