@@ -108,5 +108,8 @@
 
   "git.openRepositoryInParentFolders": "always",
   "json.format.keepLines": true,
-  "debug.javascript.autoAttachFilter": "always"
+  "debug.javascript.autoAttachFilter": "always",
+
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }

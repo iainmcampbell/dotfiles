@@ -52,5 +52,10 @@
   {
     "key": "cmd+i",
     "command": "composerMode.agent"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-composer.showBackgroundAgentHistory",
+    "when": "backgroundComposerEnabled || showBackgroundAgentHistoryAction"
   }
 ]

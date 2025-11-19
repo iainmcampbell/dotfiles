@@ -14,8 +14,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+
+# Open in editor terminal commands
 if [ -d "/Applications/Sublime Text.app" ]; then
   export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+fi
+
+if [ -d "/Applications/Cursor.app" ]; then
+  export PATH="/Applications/Cursor.app/Contents/Resources/app/bin:$PATH"
+fi
+
+if [ -d "/Applications/Visual Studio Code.app" ]; then
+  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 fi
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
@@ -23,3 +33,6 @@ fi
 if [ -d "/opt/homebrew/bin" ]; then
   export PATH="/opt/homebrew/bin:$PATH"
 fi
+
+# Added by tec agent
+[[ -x /Users/imc/.local/state/tec/profiles/base/current/global/init ]] && eval "$(/Users/imc/.local/state/tec/profiles/base/current/global/init zsh)"
